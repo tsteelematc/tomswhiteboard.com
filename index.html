@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tom’s Whiteboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <style>
+    :root {
+      --bg: #fafafa;
+      --card: #ffffff;
+      --text-main: #1a1a1a;
+      --text-soft: #555;
+      --border: #e5e5e5;
+      --link: #0066cc;
+      --link-hover: #004999;
+      --accent: #ffb400;
+      --accent-soft: rgba(255,180,0,0.15);
+      --radius: 14px;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      padding: 32px 16px 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 760px;
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: 1.9rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .tagline {
+      margin: 0 0 20px;
+      color: var(--text-soft);
+      font-size: 1rem;
+      max-width: 600px;
+      line-height: 1.45;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      margin-bottom: 20px;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .card-sub {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      margin-bottom: 10px;
+    }
+
+    .gif-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 10px;
+    }
+
+    .gif-item {
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #fff;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      align-items: baseline;
+    }
+
+    .gif-meta {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      min-width: 90px;
+    }
+
+    .gif-link {
+      font-size: 0.95rem;
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .gif-link:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+
+    .gif-note {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+    }
+
+    footer {
+      margin-top: 20px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1><span class="dot"></span>Tom’s Whiteboard</h1>
+      <p class="tagline">
+        Quick looping whiteboard GIFs for explaining ideas fast. Often dropped into YT comments or social media chats, and preserved here for posterity...
+      </p>
+    </header>
+    <section class="card">
+      <div class="card-title">Also, give it a try yourself...</div>
+      <p>
+        Feel free to use these ideas at your own whiteboard, influencing and/or communicating with your team ! ! !
+      </p>
+    </section>
+    <section class="card">
+      <div class="card-title">Whiteboard GIF stream</div>
+      <ul class="gif-list">
+
+        <!-- Add new items to the bottom of this list -->
+        <li class="gif-item">
+          <span class="gif-meta">2026-06‑04</span>
+          <a class="gif-link" href="./gifs/ms-build-model-distillation-session.gif">
+            ms-build-model-distillation-session
+          </a>
+          <span class="gif-note">My summary of an excellent MS Build session...</span>
+        </li>
+
+      </ul>
+    </section>
+
+    <footer>
+      <span>© <span id="year"></span> Tom’s Whiteboard</span>
+      <span>One page. All signal.</span>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
