@@ -77,16 +77,16 @@
       margin-bottom: 10px;
     }
 
-    .gif-list {
+    .media-list {
       list-style: none;
       padding: 0;
       margin: 0;
       display: flex;
-      flex-direction: column-reverse;
+      flex-direction: column;
       gap: 10px;
     }
 
-    .gif-item {
+    .media-item {
       padding: 10px 12px;
       border-radius: 10px;
       border: 1px solid var(--border);
@@ -97,26 +97,36 @@
       align-items: baseline;
     }
 
-    .gif-meta {
+    .media-meta {
       font-size: 0.8rem;
       color: var(--text-soft);
       min-width: 90px;
     }
 
-    .gif-link {
+    .media-link {
       font-size: 0.95rem;
       color: var(--link);
       text-decoration: none;
     }
 
-    .gif-link:hover {
+    .media-link:hover {
       color: var(--link-hover);
       text-decoration: underline;
     }
 
-    .gif-note {
+    .media-note {
       font-size: 0.8rem;
       color: var(--text-soft);
+    }
+
+    .media-embed {
+      width: 100%;
+      max-width: 640px;
+      aspect-ratio: 16 / 9;
+      height: auto;
+      border: 0;
+      border-radius: 8px;
+      margin-top: 6px;
     }
 
     footer {
@@ -137,26 +147,40 @@
     <header>
       <h1><span class="dot"></span>Tom’s Whiteboard</h1>
       <p class="tagline">
-        Quick looping whiteboard GIFs for explaining ideas fast. Often dropped into YT comments or social media chats, and preserved here for posterity...
+        Thinking out-loud on a whiteboard...
       </p>
     </header>
     <section class="card">
-      <div class="card-title">Also, give it a try yourself...</div>
-      <p>
-        Feel free to use these ideas at your own whiteboard, influencing and/or communicating with your team ! ! !
-      </p>
-    </section>
-    <section class="card">
-      <div class="card-title">Whiteboard GIF stream</div>
-      <ul class="gif-list">
+      <div class="card-title">My Whiteboards...</div>
+      <div class="card-sub">reverse-chron, vids and gifs, congnitive surplus, experiment : - O</div>
+      <ul class="media-list">
 
-        <!-- Add new items to the bottom of this list -->
-        <li class="gif-item">
-          <span class="gif-meta">2026-06‑04</span>
-          <a class="gif-link" href="./gifs/ms-build-model-distillation-session.gif">
+        <!-- Add new items to the top of this list -->
+        <li class="media-item">
+          <span class="media-meta">2026-07-13 (vid)</span>
+          <span class="media-link">
+            tca-data-pipeline-01
+          </span>
+          <span class="media-note">
+            Exploring whiteboard for project history, design decisions et. al.
+          </span>
+          <iframe
+            class="media-embed"
+            src="https://madisoncollege365-my.sharepoint.com/personal/tsteele_madisoncollege_edu/_layouts/15/embed.aspx?UniqueId=61923d9e-ee23-4369-889c-c5080910fc80&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create"
+            scrolling="no"
+            allowfullscreen
+            title="tca-data-pipeline-01.mp4"
+          ></iframe>
+        </li>
+
+        <li class="media-item">
+          <span class="media-meta">2026-06-04 (gif)</span>
+          <a class="media-link" href="./gifs/ms-build-model-distillation-session.gif">
             ms-build-model-distillation-session
           </a>
-          <span class="gif-note">My summary of an excellent MS Build session...</span>
+          <span class="media-note">
+            First try, hmm, linked in some YT comment, somewhere...
+          </span>
         </li>
 
       </ul>
@@ -164,7 +188,7 @@
 
     <footer>
       <span>© <span id="year"></span> Tom’s Whiteboard</span>
-      <span>One page. All signal.</span>
+      <span>Thanks for visiting ; - )</span>
     </footer>
   </div>
 
